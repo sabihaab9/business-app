@@ -15,7 +15,7 @@ function NavBar({ user, setUser }) {
             <nav className="nav">
                 <ul>
                     <li>
-                        <a href="/">Home</a>
+                        <a href="/home">Home</a>
                     </li>
                     <li>
                         <a href="Login">Login</a>

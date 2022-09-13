@@ -1,12 +1,12 @@
 import React from "react";
 import BusinessCard from "./BusinessCard";
 
-function BusinessList({businesses}){
+function BusinessList({businessList}){
 
 
     return (
         <ul className="cards">
-      {businesses.map((business) => {
+      {businessList.map((business) => {
         return (
           <BusinessCard
             key={business.id}

@@ -8,13 +8,13 @@
 
 # creates Users
 
-User1 = User.create(first_name: "Ronald", last_name: "McDonald", username: "MickeyDeez2003@gmail.com", password: "123")
+User1 = User.create(first_name: "sabiha", last_name: "bary", username: "sb@gmail.com", password: "123")
 User2 = User.create(first_name: "Johnny", last_name: "Rocket", username: "JohnnyToDaMoon@gmail.com", password: "456")
 
 puts "created users!"
 
 # category: african goods 
-Business1 = Business.create(name: "AL MAKTOUM GOODS", address: "417 7th Ave, Brooklyn, NY 11215", phone_number: "(646) 301-8971", category: "home goods" , region: "africa" , description: "Sengalese handmade goods.", image_url: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Flag_of_Senegal.svg", validated_business?: true, women_owned?: false, refugee_owned?: false)
+Business1 = Business.create(name: "AL MAKTOUM GOODS", address: "417 7th Ave, Brooklyn, NY 11215", phone_number: "(646) 301-8971", category: "home-goods" , region: "africa" , description: "Sengalese handmade goods.", image_url: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Flag_of_Senegal.svg", validated_business?: true, women_owned?: false, refugee_owned?: false)
 Business2 = Business.create(name: "Thai Farm Kitchen" , address: "416 Church Ave., Brooklyn, New York 11218", phone_number: "347-533-9368", category: "restaurant" , region: "southeast asia" , description: " farm-to-table thai food" , image_url: "https://bit.ly/3D53b3P", validated_business?: true, women_owned?: true , refugee_owned?: false)
 
 puts "created stores!"

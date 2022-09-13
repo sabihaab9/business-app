@@ -1,11 +1,11 @@
-import './App.css'
 import React, { useEffect, useState } from "react"
+import './App.css'
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
-
 
 import Home from "./components/Home";
 import Login from "./components/Login";
 import NavBar from "./components/NavBar";
+import UserProfile from './components/UserProfile';
 //import BusinessList from "./components/BusinessList";
 
 function App() {
@@ -34,14 +34,17 @@ function App() {
     <Router>
       <NavBar user={user} setUser={setUser} />
       <Switch>
-      <Route path="/home">
-          <Home />
-      </Route>
-      <Route exact path="/login">
-          <Login setUser={setUser} user={user} />
-      </Route>
-    </Switch>
-  </Router>
+        <Route path="/home">
+            <Home />
+        </Route>
+        <Route exact path="/login">
+            <Login setUser={setUser} user={user} />
+        </Route>
+        <Route exact path="/userprofile" component={UserProfile}>
+            <UserProfile setUser={setUser} user={user} />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

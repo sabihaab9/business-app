@@ -1,10 +1,10 @@
 import React from "react";
 
-function Search({ searchTerm, setSearchTerm, displayedBusinesses}) {
+function Search({ searchTerm, setSearchTerm, showBusinessList}) {
 
-    const handleFilter = (value) => {
+    const  handleFilter = (value) => {
       setSearchTerm(value)
-      displayedBusinesses()
+      showBusinessList()
     }
 
     return (

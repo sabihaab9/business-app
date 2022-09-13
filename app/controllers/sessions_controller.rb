@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
   skip_before_action :authorize, only: [:create, :show, :destroy]
 
+  def index
+    render json: Session.all
+  end
+
   def create # our login
     user = User.find_by(username: params[:username])
     if user&.authenticate(params[:password])

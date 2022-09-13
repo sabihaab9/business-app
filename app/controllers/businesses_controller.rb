@@ -1,10 +1,21 @@
 class BusinessesController < ApplicationController
-    before_action :find_business, except: [:index, :create]
+    skip_before_action :authorize
+    before_action :find_business, except: [:index, :create, :show_cat]
+ 
+
 
     def index
         all = Business.all
         render json: all
       end
+
+      def show_cat
+      puts params
+      # cat = params[:id].tr('-', " ")
+      # puts cat
+      businesses = Business.where(category: params[:category])
+      render json: businesses
+    end
 
     def show
         render json: @business # serializer: DrugstoreShowSerializer

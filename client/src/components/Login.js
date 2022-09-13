@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import UserProfile from "./UserProfile";
+// import {NavLink } from "react-router-dom"
+// import { useHistory } from 'react-router-dom';
 
 function Login({ setUser, user }) {
   const [username, setUsername] = useState("");
@@ -7,6 +10,7 @@ function Login({ setUser, user }) {
   const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(e) {
+    
     e.preventDefault();
     setIsLoading(true);
     fetch("/login", {
@@ -23,7 +27,26 @@ function Login({ setUser, user }) {
         r.json().then((err) => setErrors(err.errors));
       }
     });
+    var url = "/userprofile";
+    window.location.href = url;
+    // UserProfile(user.first_name, user.last_name)
+    // return (
+    //   <UserProfile first_name = {user.first_name} last_name = {user.last_name}/>
+    // )
+    // <NavLink to={{                            
+    //   pathname:`/single-game/${games.slug}`,                            
+    //  }}>             
+    {/* navigation.navigate('/userprofile', {
+      first_name: user.first_name,
+      last_Name: user.last_name,
+    }); */}
+    // history.push("/userprofile", {
+    //   first_name: user.first_name,
+    // })
   }
+
+  {/* // function getUserProfile() {
+  // } */}
   return (
   <div>
     <form onSubmit={handleSubmit}>
@@ -46,12 +69,13 @@ function Login({ setUser, user }) {
         <button variant="fill" color="primary" type="submit">
           {isLoading ? "Loading..." : "Login"}
         </button>
-
-    </form>
-    <h3>{ isLoading ? "loading" : 'last_name'} </h3>
+        {/* <button onClick={this.handleClick}>hello</button> */}
+      </form>
+      {/* <Link to="/userprofile"></Link> */}
+    {/* <h3>{ isLoading ? "is loading" : ''} </h3> */}
+    {/* <UserProfile first_name = {user.first_name} last_name = {user.last_name}/> */}
     </div>
   )
 }
-
 
 export default Login;

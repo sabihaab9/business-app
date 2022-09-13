@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   
   get '/auth', to: 'users#show'
 
-  #get '/businesses', to: 'businesses#index'
+  get '/biz/:category', to: 'businesses#show_cat'
+
+
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
