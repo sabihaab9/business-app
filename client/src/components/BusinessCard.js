@@ -2,8 +2,10 @@ import React from "react";
 
 function BusinessCard({business, addToFavorites}){
 
-    const handleClick = (event) => addToFavorites()
-
+    function handleClick() {
+        addToFavorites();
+        // console.log(business)
+    }
     return(
         <li className="card">
             <img src={business.image_url} alt={business.name} /> 

@@ -1,8 +1,6 @@
 class BusinessesController < ApplicationController
     skip_before_action :authorize
     before_action :find_business, except: [:index, :create, :show_cat]
- 
-
 
     def index
         all = Business.all

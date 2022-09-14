@@ -2,30 +2,37 @@ import React from "react";
 import '../App.css'
 
 function NavBar({ user, setUser }) {
-    function handleLogoutClick() {
-      fetch("/logout", { method: "DELETE" }).then((r) => {
-        if (r.ok) {
-          setUser(null);
-        }
-      });
-    }
+
+    const handleLogout = () => {
+        fetch('/logout', {method: 'DELETE'})
+        setUser({})
+      }
+
+    // function handleLogoutClick() {
+    //   fetch("/logout", { method: "DELETE" }).then((r) => {
+    //     if (r.ok) {
+    //       setUser(null);
+    //     }
+    //   });
+    // }
   
     return (
         <div className="homepage">
             <nav className="nav">
                 <ul>
                     <li>
-                        <a href="/home">Home</a>
+                        <a href="/search">Search Businesses</a>
                     </li>
                     <li>
-                        <a href="Login">Login</a>
+                        <a href="/login">Login</a>
                     </li>
                     <li>
-                        <a href="About">About</a>
+                        <a href="/signup">Create Account</a>
                     </li>
                     <li>
-                        <a href="Search">Find Businesses in Your Neighborhood</a>
+                        <a href="/about">About</a>
                     </li>
+                    <li><button onClick={handleLogout}>Logout</button></li>
                 </ul>
             </nav>
         </div>

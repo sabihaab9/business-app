@@ -6,10 +6,49 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import NavBar from "./components/NavBar";
 import UserProfile from './components/UserProfile';
+import SignUp from './components/SignUp';
 //import BusinessList from "./components/BusinessList";
 
 function App() {
   const [user, setUser] = useState({});
+  const [businessList, setBusinessList] = useState([]);
+
+
+  useEffect(() => { 
+    const getBusinesses = async () => {
+        let req = await fetch("http://localhost:3000/businesses")
+        let res = await req.json()
+        // console.log(res)
+        setBusinessList(res)
+    }
+    getBusinesses()
+    console.log("business list: ")
+    console.log(businessList)
+  }, []);
+
+  // console.log(businessList)
+
+  function addToFavorites(){
+    // alert(`saved ${business.name} to favorites!`)
+    alert(`saved business to favorites!`)
+
+
+    // fetch("http://localhost:3000/users", {
+    //   method: 'POST', // or 'PUT'
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(data),
+    // })
+    // .then((response) => response.json())
+    // .then((data) => {
+    //   console.log('Success:', data);
+    // })
+    // .catch((error) => {
+    //   console.error('Error:', error);
+    // });
+    
+  }
 
   //for users to check if they are logged in:
 
@@ -34,14 +73,17 @@ function App() {
     <Router>
       <NavBar user={user} setUser={setUser} />
       <Switch>
-        <Route path="/home">
-            <Home />
+        <Route path="/search">
+            <Home addToFavorites={addToFavorites} businessList={businessList} setBusinessList={setBusinessList} />
         </Route>
         <Route exact path="/login">
             <Login setUser={setUser} user={user} />
         </Route>
+        <Route exact path="/signup">
+            <SignUp setUser={setUser} user={user} />
+        </Route>
         <Route exact path="/userprofile" component={UserProfile}>
-            <UserProfile setUser={setUser} user={user} />
+            <UserProfile setUser={setUser} user={user} businessList={businessList} />
         </Route>
       </Switch>
     </Router>

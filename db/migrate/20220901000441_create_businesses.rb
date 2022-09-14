@@ -11,6 +11,7 @@ class CreateBusinesses < ActiveRecord::Migration[6.1]
       t.boolean :validated_business?
       t.boolean :women_owned?
       t.boolean :refugee_owned?
+      t.integer :user_id
 
       t.timestamps
     end

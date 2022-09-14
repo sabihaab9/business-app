@@ -1,6 +1,6 @@
 class CreateBusinessesUsers < ActiveRecord::Migration[6.1]
   def change
-    create_table :businesses_users do |t|
+    create_table :businesses_users, id: false do |t|
       t.integer :business_id
       t.integer :user_id
 

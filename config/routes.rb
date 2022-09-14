@@ -18,6 +18,9 @@ Rails.application.routes.draw do
 
   get '/biz/:category', to: 'businesses#show_cat'
 
+  get 'users/:id', to: 'users#show'
+
+
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import '../App.css'
 import Search from "./Search";
 import Filters from "./Filters";
 import BusinessList from "./BusinessList";
-import UserProfile from "./UserProfile";
+//import UserProfile from "./UserProfile";
 
 // import { Container } from "semantic-ui-react";
 
-function Home() {
+function Home({addToFavorites, businessList, setBusinessList}) {
 
     const [searchTerm, setSearchTerm] = useState("");
-    const [businessList, setBusinessList] = useState([]);
     const [filters, setFilters] = useState({category: "all"})
 
 
@@ -36,18 +35,7 @@ function Home() {
             });
         }
 
-    useEffect(() => { 
-        const getBusinesses = async () => {
-            let req = await fetch("http://localhost:3000/businesses")
-            let res = await req.json()
-            console.log(res)
-            setBusinessList(res)
-            console.log(businessList)
-        }
-        getBusinesses()
-      }, []);
-
-      console.log(businessList)
+    
 
       const showBusinessList = businessList.filter(business => business.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
@@ -68,8 +56,8 @@ function Home() {
             <br />
         {/* </Container> */}
       
-        <BusinessList businessList = {businessList}/>
-        <UserProfile businessList={businessList}/>
+        <BusinessList businessList = {businessList} addToFavorites ={addToFavorites}/>
+        {/* <UserProfile businessList={businessList}/> */}
         </div>
     );
 }

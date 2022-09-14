@@ -33,11 +33,12 @@ ActiveRecord::Schema.define(version: 2022_09_07_150145) do
     t.boolean "validated_business?"
     t.boolean "women_owned?"
     t.boolean "refugee_owned?"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "businesses_users", force: :cascade do |t|
+  create_table "businesses_users", id: false, force: :cascade do |t|
     t.integer "business_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false

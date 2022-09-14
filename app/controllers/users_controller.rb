@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
     skip_before_action :authorize, only: [:create]
 
+    def index
+      users = User.all
+      render json: users
+    end
+
     def create
         #Save a new user to the database with their username, encrypted password
         user = User.create!(user_params)
@@ -12,7 +17,8 @@ class UsersController < ApplicationController
     end
 
     def show
-      render json: @current_user
+      user = User.find_by(id: params[:id]).to_json(methods: [:businesses])
+      render json: user
     end
     
     private
@@ -22,3 +28,4 @@ class UsersController < ApplicationController
     end
 
 end
+

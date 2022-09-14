@@ -6,11 +6,6 @@ import { BrowserRouter } from 'react-router-dom';
 
 // import reportWebVitals from './reportWebVitals';
 
-// console.log('React', React);
-// console.log('ReactDOM', ReactDOM);
-// console.log('App', App);
-// console.log('reportWebVitals', reportWebVitals);
-// console.log('BrowserRouter', BrowserRouter);
 
 ReactDOM.render(
   <BrowserRouter>
