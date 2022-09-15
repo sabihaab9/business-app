@@ -12,7 +12,7 @@ App
 
 TO DO: 
 -fix search bar 
--add sign up component
+- fix sign up component
 
 
 

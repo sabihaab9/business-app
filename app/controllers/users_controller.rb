@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     end
 
     def show
-      user = User.find_by(id: params[:id]).to_json(methods: [:businesses])
+      user = User.find_by(id: params[:id]).to_json(methods: [:businessesuser])
       render json: user
     end
     

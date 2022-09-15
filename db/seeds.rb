@@ -22,3 +22,11 @@ puts "created stores!"
 
 
 
+puts "created Favorites"
+
+fav1 = BusinessesUser.create(user_id: 1, business_id:1 )
+fav2 = BusinessesUser.create(user_id: 1, business_id:2)
+
+
+
+
