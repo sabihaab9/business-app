@@ -1,5 +1,16 @@
 # Project Template: React/Rails API
 
+- favorite button on business is clicked -> we need to add business_id to favorites array in user 
+  - 
+
+
+
+
+
+
+
+
+
 ## Description
 
 This project is scaffolded so that you can build a React frontend and Rails

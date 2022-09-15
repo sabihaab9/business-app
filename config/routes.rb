@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   get 'users/:id', to: 'users#show'
 
+  patch 'users/:favorites', to: 'users'
+
 
 
   # Routing logic: fallback requests for React Router.

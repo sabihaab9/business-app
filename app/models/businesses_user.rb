@@ -1,4 +1,4 @@
 class BusinessesUser < ApplicationRecord
-# has_many :businesses
-# belongs_to :user
+    belongs_to :user
+    has_many :businesses
 end
