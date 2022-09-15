@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
     skip_before_action :authorize, only: [:create]
 
+    
+    def add_favorite_to_user 
+        user = User.find_by(id: session[:user_id])
+        puts user 
+    end
+    
     def index
       users = User.all
       render json: users
@@ -17,7 +23,7 @@ class UsersController < ApplicationController
     end
 
     def show
-      user = User.find_by(id: params[:id]).to_json(methods: [:businesses])
+      user = User.find_by(id: params[:id]).to_json(methods: [:businesses_user])
       render json: user
     end
     

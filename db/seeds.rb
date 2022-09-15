@@ -22,3 +22,6 @@ puts "created stores!"
 
 
 
+#add column on user table -> .favorites -> this would be an array 
+
+
