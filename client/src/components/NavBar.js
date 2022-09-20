@@ -32,6 +32,9 @@ function NavBar({ user, setUser }) {
                     <li>
                         <a href="/about">About</a>
                     </li>
+                    <li>
+                        <a href="/userprofile">My Profile</a>
+                    </li>
                     <li><button onClick={handleLogout}>Logout</button></li>
                 </ul>
             </nav>

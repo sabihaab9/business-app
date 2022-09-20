@@ -32,13 +32,12 @@ function App() {
     // alert(`saved ${business.name} to favorites!`)
     alert(`saved business to favorites!`)
 
-
-    fetch("http://localhost:3000/users", {
-      method: 'PATCH', // or 'PUT'
+    fetch("http://localhost:3000/favorites", {
+      method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({favorite: favoriteItem}),
+      body: JSON.stringify(favoriteItem),
 
     })
     .then((response) => response.json())
@@ -48,7 +47,6 @@ function App() {
     .catch((error) => {
       console.error('Error:', error);
     });
-    
   }
 
   //for users to check if they are logged in:

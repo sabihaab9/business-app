@@ -10,18 +10,17 @@ Rails.application.routes.draw do
 
   post '/login', to: 'sessions#create'
 
+  post '/favorites', to: 'businesses_users#create'
+
+  get '/favorites', to: 'businesses_users#show'
+
   delete '/logout', to: 'sessions#destroy'
 
   get '/me', to: 'sessions#show'
   
-  get '/auth', to: 'users#show'
+  # get '/users/:id', to: 'users#show'
 
   get '/biz/:category', to: 'businesses#show_cat'
-
-  get 'users/:id', to: 'users#show'
-
-
-
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

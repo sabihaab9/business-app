@@ -2,10 +2,15 @@ import React from "react";
 
 function BusinessCard({business, addToFavorites}){
 
-    function handleClick() {
-        addToFavorites();
+    const handleClick = () => {
+        const favoriteItem = {
+            business_id: business.id
+        }
+        addToFavorites(favoriteItem);
         // console.log(business)
     }
+
+
     return(
         <li className="card">
             <img src={business.image_url} alt={business.name} /> 

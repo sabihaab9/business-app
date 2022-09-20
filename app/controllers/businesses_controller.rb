@@ -7,13 +7,13 @@ class BusinessesController < ApplicationController
         render json: all
       end
 
-      def show_cat
+    def show_cat
       puts params
-      # cat = params[:id].tr('-', " ")
-      # puts cat
+        # cat = params[:id].tr('-', " ")
+        # puts cat
       businesses = Business.where(category: params[:category])
       render json: businesses
-    end
+      end
 
     def show
         render json: @business # serializer: DrugstoreShowSerializer

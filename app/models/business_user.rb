@@ -1,2 +1,0 @@
-class BusinessUser < ApplicationRecord
-end

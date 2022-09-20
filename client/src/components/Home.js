@@ -36,7 +36,7 @@ function Home({addToFavorites, businessList, setBusinessList}) {
         }
 
     
-
+        // shows filtered list 
       const showBusinessList = businessList.filter(business => business.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
 
@@ -56,7 +56,7 @@ function Home({addToFavorites, businessList, setBusinessList}) {
             <br />
         {/* </Container> */}
       
-        <BusinessList businessList = {businessList} addToFavorites ={addToFavorites}/>
+        <BusinessList businessList={showBusinessList} addToFavorites={addToFavorites}/>
         {/* <UserProfile businessList={businessList}/> */}
         </div>
     );

@@ -1,6 +1,11 @@
 class Business < ApplicationRecord
-  #has_many :users
-  #belongs_to :user
+  has_many :businesses_users
+  has_many :users, through: :businesses_users
+
+
+
+
+
 
 
 
