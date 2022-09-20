@@ -7,19 +7,31 @@ function UserProfile({user, businessList}){
 
   const [myFavs, setMyFavs] = useState([])
 
+  console.log("user-id is ")
   console.log(user.id)
 
+    // useEffect(() => {
+    //   const getUser = async () => {
+    //     let req = await fetch(`http://localhost:3000/users/${user.id}`)
+    //     let res = await req.json()
+    //     console.log(res)
+    //     setMyFavs(res)
+    //   }
+    //   getUser();
+    //   console.log(myFavs)
+    // },[])
+
     useEffect(() => {
-      const getUser = async () => {
-        let req = await fetch(`http://localhost:3000/users/${user.id}`)
-        let res = await req.json()
-        console.log(res)
-        setMyFavs(res)
-      }
-      getUser();
-      console.log(myFavs)
-    },[])
-    
+      fetch(`http://localhost:3000/users/${user.id}`)
+        .then((r) => r.json())
+        .then((data) => {
+          setMyFavs(data.businesses);
+        });
+    }, [user]);
+
+    console.log("user's favorited businesses: ")
+     console.log(myFavs)
+
     return(
         <div>
             <h1 style={{ color: "firebrick"}}>
