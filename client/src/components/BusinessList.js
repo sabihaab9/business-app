@@ -1,7 +1,7 @@
 import React from "react";
 import BusinessCard from "./BusinessCard";
 
-function BusinessList({businessList, addToFavorites}){
+function BusinessList({businessList, addToFavorites, user}){
 
 
 
@@ -15,6 +15,7 @@ function BusinessList({businessList, addToFavorites}){
             key={business.id}
             business={business}
             addToFavorites={addToFavorites}
+            user={user}
           />
         );
       })}

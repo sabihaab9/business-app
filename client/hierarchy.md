@@ -6,12 +6,12 @@ App
 
     --> Login
     --> UserProfile
-      --> BusinessList
+      --> MyFavList
+        --> MyFavCard
 
 
 
 TO DO: 
--fix search bar 
 - fix sign up component
 
 

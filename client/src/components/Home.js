@@ -7,7 +7,7 @@ import BusinessList from "./BusinessList";
 
 // import { Container } from "semantic-ui-react";
 
-function Home({addToFavorites, businessList, setBusinessList}) {
+function Home({addToFavorites, businessList, setBusinessList, user}) {
 
     const [searchTerm, setSearchTerm] = useState("");
     const [filters, setFilters] = useState({category: "all"})
@@ -56,7 +56,7 @@ function Home({addToFavorites, businessList, setBusinessList}) {
             <br />
         {/* </Container> */}
       
-        <BusinessList businessList={showBusinessList} addToFavorites={addToFavorites}/>
+        <BusinessList businessList={showBusinessList} addToFavorites={addToFavorites} user={user}/>
         {/* <UserProfile businessList={businessList}/> */}
         </div>
     );

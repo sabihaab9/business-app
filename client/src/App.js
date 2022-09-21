@@ -13,7 +13,6 @@ function App() {
   const [user, setUser] = useState({});
   const [businessList, setBusinessList] = useState([]);
 
-
   useEffect(() => { 
     const getBusinesses = async () => {
         let req = await fetch("http://localhost:3000/businesses")
@@ -22,8 +21,8 @@ function App() {
         setBusinessList(res)
     }
     getBusinesses()
-    console.log("business list: ")
-    console.log(businessList)
+    // console.log("business list: ")
+    // console.log(businessList)
   }, []);
 
   // console.log(businessList)
@@ -34,6 +33,7 @@ function App() {
 
     fetch("http://localhost:3000/favorites", {
       method: 'POST', // or 'PUT'
+      accept: 'application/json',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -49,23 +49,16 @@ function App() {
     });
   }
 
-  //for users to check if they are logged in:
-
-  //auto-login - if user is logged: 
-  //if auth returns successfully, return with our user, and setCurrentUser = user
-  //if our user has their id saved to sessions, then the response should return with that specific user
-  //this will auto-login our user so long as we have their id saved to sessions
-
   useEffect(() => {
     // auto-login
     fetch("/me").then((r) => {
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((data) => {
+          setUser(data)});
       }
     });
   }, []);
-  //to redirect the user if the user was not logged in: 
-  //if currentUser is empty or not saved in sessions, we are going to direct our user to the login component. 
+
   if (!user) return <Login setUser={setUser} user={user} />
   
   return (
@@ -73,7 +66,7 @@ function App() {
       <NavBar user={user} setUser={setUser} />
       <Switch>
         <Route path="/search">
-            <Home addToFavorites={addToFavorites} businessList={businessList} setBusinessList={setBusinessList} />
+            <Home addToFavorites={addToFavorites} businessList={businessList} setBusinessList={setBusinessList} user={user} />
         </Route>
         <Route exact path="/login">
             <Login setUser={setUser} user={user} />

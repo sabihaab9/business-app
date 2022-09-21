@@ -1,10 +1,11 @@
 import React from "react";
 
-function BusinessCard({business, addToFavorites}){
+function BusinessCard({business, addToFavorites, user}){
 
     const handleClick = () => {
         const favoriteItem = {
-            business_id: business.id
+            business_id: business.id,
+            user_id: user.id
         }
         addToFavorites(favoriteItem);
         // console.log(business)

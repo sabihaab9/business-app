@@ -13,10 +13,13 @@ Rails.application.routes.draw do
   post '/favorites', to: 'businesses_users#create'
 
   get '/favorites', to: 'businesses_users#show'
+  
+  delete '/favorites/:id/:id', to:'businesses_users#destroy'
 
   delete '/logout', to: 'sessions#destroy'
 
   get '/me', to: 'sessions#show'
+
   
   # get '/users/:id', to: 'users#show'
 
