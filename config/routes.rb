@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get '/favorites', to: 'businesses_users#show'
   
-  delete '/favorites/:id/:id', to:'businesses_users#destroy'
+  delete '/favorites/:id/:user_id', to:'businesses_users#destroy'
 
   delete '/logout', to: 'sessions#destroy'
 

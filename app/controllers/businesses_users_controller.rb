@@ -12,8 +12,12 @@ skip_before_action :authorize, only: [:create, :show, :destroy]
     end
 
     def destroy
-        fav = BusinessesUser.find_by!(business_id: params[:business_id], user_id: params[:user_id])
+        puts params[:id]
+        puts params[:user_id]
+        fav = BusinessesUser.find_by!(business_id: params[:id], user_id: params[:user_id])
+        puts "FAV"
         fav.destroy
+        # fav = BusinessesUser.destroy_by(business_id: params[:id], user_id: params[:user_id])
         render json: fav
     end
 

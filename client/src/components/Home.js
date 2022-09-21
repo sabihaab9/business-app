@@ -4,7 +4,6 @@ import Search from "./Search";
 import Filters from "./Filters";
 import BusinessList from "./BusinessList";
 //import UserProfile from "./UserProfile";
-
 // import { Container } from "semantic-ui-react";
 
 function Home({addToFavorites, businessList, setBusinessList, user}) {
