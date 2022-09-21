@@ -1,4 +1,4 @@
-class BusinessesUsersController < ApplicationController
+scheclass BusinessesUsersController < ApplicationController
 
 skip_before_action :authorize, only: [:create, :show, :destroy]
 

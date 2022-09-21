@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   
   resources :businesses
-  resources :admins
   resources :users, only: [:create, :show]
 
   # HTTP VERB | URL | CONTROLLER | ACTION
