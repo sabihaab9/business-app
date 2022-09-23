@@ -16,7 +16,7 @@ function FavList({favoritesList, user}){
 
     return (
         <ul className="cards">
-      {favoritesList.length !=0 ? favoritesList.map((favorite) => {
+      {favoritesList.length !==0 ? favoritesList.map((favorite) => {
         console.log(favorite)
         return (
           <FavCard
@@ -25,7 +25,7 @@ function FavList({favoritesList, user}){
             user={user}
           />
         );
-      }):"Loading...."}
+      }):"favorites not showing :("}
     </ul>
     )
 }

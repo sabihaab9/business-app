@@ -3,10 +3,11 @@ import '../App.css'
 import Search from "./Search";
 import Filters from "./Filters";
 import BusinessList from "./BusinessList";
+import "../App.css"
 //import UserProfile from "./UserProfile";
 // import { Container } from "semantic-ui-react";
 
-function Home({addToFavorites, businessList, setBusinessList, user}) {
+function ShowBusinesses({addToFavorites, deleteBusiness, businessList, setBusinessList, user}) {
 
     const [searchTerm, setSearchTerm] = useState("");
     const [filters, setFilters] = useState({category: "all"})
@@ -35,16 +36,12 @@ function Home({addToFavorites, businessList, setBusinessList, user}) {
         }
 
     
-        // shows filtered list 
+      //shows filtered list 
       const showBusinessList = businessList.filter(business => business.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
 
-
-
-      
-
     return (
-        <div className="homepage">
+      <div className="homepage-container">
         <h1>Support Local Immigrant-Owned Small Businesses</h1>
         <h3>Search by Name</h3>
         <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} showBusinessList={showBusinessList}/>
@@ -55,10 +52,10 @@ function Home({addToFavorites, businessList, setBusinessList, user}) {
             <br />
         {/* </Container> */}
       
-        <BusinessList businessList={showBusinessList} addToFavorites={addToFavorites} user={user}/>
+        <BusinessList businessList={showBusinessList} addToFavorites={addToFavorites} deleteBusiness={deleteBusiness} user={user}/>
         {/* <UserProfile businessList={businessList}/> */}
         </div>
     );
 }
 
-export default Home;
+export default ShowBusinesses;

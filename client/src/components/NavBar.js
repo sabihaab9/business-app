@@ -1,5 +1,6 @@
 import React from "react";
-import '../App.css'
+import { NavLink } from "react-router-dom";
+import '../NavBar.css'
 
 function NavBar({ user, setUser }) {
 
@@ -17,27 +18,39 @@ function NavBar({ user, setUser }) {
     // }
   
     return (
-        <div className="homepage">
-            <nav className="nav">
-                <ul>
-                    <li>
-                        <a href="/search">Search Businesses</a>
-                    </li>
-                    <li>
-                        <a href="/login">Login</a>
-                    </li>
-                    <li>
-                        <a href="/signup">Create Account</a>
-                    </li>
-                    <li>
-                        <a href="/about">About</a>
-                    </li>
-                    <li>
-                        <a href="/userprofile">My Profile</a>
-                    </li>
-                    <li><button onClick={handleLogout}>Logout</button></li>
-                </ul>
-            </nav>
+        <div className="nav-container">
+            <div className="nav-inner">
+                <NavLink style={{textDecoration: "none"}} exact to="/businesses">                   
+                    <div className="nav-buttons">
+                        <p>Search Businesses</p>
+                    </div></NavLink>
+                    <NavLink style={{textDecoration: "none"}} exact to="/login"> 
+
+                    <div className="nav-buttons">
+                        <p>Login</p>
+                    </div>
+                    </NavLink>
+                    <NavLink style={{textDecoration: "none"}} exact to="/create">
+                        <div className="nav-buttons">
+                        <p>Create Account</p>
+                        </div>
+                    </NavLink>
+                    <NavLink style={{textDecoration: "none"}} exact to="/about">
+                        <div className="nav-buttons">
+                        <p>About</p>
+                        </div>
+                    </NavLink>
+
+                    <NavLink style={{textDecoration: "none"}} exact to="/userprofile">
+                        <div className="nav-buttons">
+                        <p>My Profile</p>
+                        </div>
+                    </NavLink>
+
+
+            
+            </div>
+            <div className="logout-button" onClick={handleLogout}>Logout</div>
         </div>
     )
 }

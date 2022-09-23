@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :show]
 
   # HTTP VERB | URL | CONTROLLER | ACTION
+  post "/create", to: "businesses#create"
+
+  # delete "/businesses/:id", to: "businesses#destroy"
+
+  patch "/edit/:business_id", to: "businesses#update"
   
   post "/signup", to: "users#create"
 

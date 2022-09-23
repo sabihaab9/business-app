@@ -1,25 +1,27 @@
 import React from "react";
 import BusinessCard from "./BusinessCard";
+import "../App.css"
 
-function BusinessList({businessList, addToFavorites, user}){
+function BusinessList({businessList, addToFavorites, user, deleteBusiness}){
 
 
 
 
 
     return (
-        <ul className="cards">
+        <div id="main-container">
       {businessList.map((business) => {
         return (
           <BusinessCard
             key={business.id}
             business={business}
             addToFavorites={addToFavorites}
+            deleteBusiness={deleteBusiness}
             user={user}
           />
         );
       })}
-    </ul>
+    </div>
     )
 }
 

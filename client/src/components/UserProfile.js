@@ -25,7 +25,7 @@ function UserProfile({user, businessList}){
     return(
         <div>
             <h1 style={{ color: "firebrick"}}>
-                Welcome, {user.first_name} {user.last_name}!
+                Welcome,{user.first_name} {user.last_name}!
             </h1>
             <FavList favoritesList={myFavs} user={user} />
             

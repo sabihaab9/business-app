@@ -8,8 +8,8 @@
 
 # creates Users
 
-User1 = User.create(first_name: "sabiha", last_name: "bary", username: "sb@gmail.com", password: "123")
-User2 = User.create(first_name: "Johnny", last_name: "Rocket", username: "JohnnyToDaMoon@gmail.com", password: "456")
+User1 = User.create(first_name: "sabiha", last_name: "bary", username: "sb@gmail.com", password: "123", is_admin: true)
+User2 = User.create(first_name: "bob", last_name: "rock", username: "bob@gmail.com", password: "123", is_admin: false)
 
 puts "created users!"
 

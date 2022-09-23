@@ -2,16 +2,19 @@ import React, { useEffect, useState } from "react"
 import './App.css'
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
 
-import Home from "./components/Home";
+import ShowBusinesses from "./components/ShowBusinesses";
 import Login from "./components/Login";
 import NavBar from "./components/NavBar";
 import UserProfile from './components/UserProfile';
 import SignUp from './components/SignUp';
-//import BusinessList from "./components/BusinessList";
+import BusinessForm from "./components/BusinessForm";
 
 function App() {
   const [user, setUser] = useState({});
   const [businessList, setBusinessList] = useState([]);
+
+  console.log(user)
+
 
   useEffect(() => { 
     const getBusinesses = async () => {
@@ -49,6 +52,40 @@ function App() {
     });
   }
 
+  function addBusinessToDirectory(business){
+
+    alert(`Admin added business to business directory!`)
+
+    //fetch("http://localhost:3000/businesslist"
+    fetch("http://localhost:3000/create", {
+      method: 'POST', // or 'PUT'
+      accept: 'application/json',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(business),
+    })
+   
+    setBusinessList([...businessList, business])
+
+  }
+
+  function deleteBusiness(business){
+
+    alert(`Admin deleted business to business directory!`)
+
+    //fetch("http://localhost:3000/businesslist"
+    fetch(`http://localhost:3000/businesses/${business.id}`, {
+      method: 'DELETE', // or 'PUT'
+      accept: 'application/json',
+      // headers: {
+      //   'Content-Type': 'application/json',
+      // },
+      // body: JSON.stringify(business),
+    })
+    setBusinessList([...businessList, business])
+  }
+
   useEffect(() => {
     // auto-login
     fetch("/me").then((r) => {
@@ -65,14 +102,17 @@ function App() {
     <Router>
       <NavBar user={user} setUser={setUser} />
       <Switch>
-        <Route path="/search">
-            <Home addToFavorites={addToFavorites} businessList={businessList} setBusinessList={setBusinessList} user={user} />
+        <Route path="/businesses">
+            <ShowBusinesses deleteBusiness={deleteBusiness} addToFavorites={addToFavorites} businessList={businessList} setBusinessList={setBusinessList} user={user} />  
         </Route>
         <Route exact path="/login">
             <Login setUser={setUser} user={user} />
         </Route>
         <Route exact path="/signup">
             <SignUp setUser={setUser} user={user} />
+        </Route>
+        <Route path="/create">
+            <BusinessForm addNewBusiness={addBusinessToDirectory} businessList={businessList} setBusinessList={setBusinessList} user={user} />  
         </Route>
         <Route exact path="/userprofile" component={UserProfile}>
             <UserProfile setUser={setUser} user={user} businessList={businessList} />

@@ -36,3 +36,50 @@
     transform: rotate(360deg);
   }
 }
+
+#main-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.inner-container {
+  width: 200px;
+  height: 40px;
+
+}
+
+.select-container {
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+#find-button {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border-style: 1px;
+  border-width: 1px;
+  border-color: rgb(54, 93, 250);
+  background-color: rgb(54, 93, 250);
+
+}
+
+#button-text {
+  color: white;
+  font-size: 16px;
+}
+

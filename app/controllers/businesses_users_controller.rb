@@ -1,4 +1,4 @@
-scheclass BusinessesUsersController < ApplicationController
+class BusinessesUsersController < ApplicationController
 
 skip_before_action :authorize, only: [:create, :show, :destroy]
 
@@ -20,7 +20,5 @@ skip_before_action :authorize, only: [:create, :show, :destroy]
         # fav = BusinessesUser.destroy_by(business_id: params[:id], user_id: params[:user_id])
         render json: fav
     end
-
-
 end
 

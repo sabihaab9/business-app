@@ -2,7 +2,8 @@ App
     --> NavBar
     --> Home 
       --> Search
-      --> BusinessList 
+      --> BusinessList
+        --> BusinessCard 
 
     --> Login
     --> UserProfile
