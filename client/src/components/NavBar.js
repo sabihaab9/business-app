@@ -32,7 +32,7 @@ function NavBar({ user, setUser }) {
                     </NavLink>
                     <NavLink style={{textDecoration: "none"}} exact to="/create">
                         <div className="nav-buttons">
-                        <p>Create Account</p>
+                        <p>Add a Business</p>
                         </div>
                     </NavLink>
                     <NavLink style={{textDecoration: "none"}} exact to="/about">

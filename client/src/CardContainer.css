@@ -31,6 +31,7 @@
     justify-content: center;
     align-items: center;
     transition: .3s ease-in-out;
+    margin-bottom: 5px;
 }
 
 .button-container:hover {

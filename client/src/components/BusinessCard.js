@@ -9,11 +9,7 @@ function BusinessCard({business, addToFavorites, user, deleteBusiness}){
             user_id: user.id
         }
         addToFavorites(favoriteItem);
-
-
-        
         // console.log(business)
-
     }
 
 

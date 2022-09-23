@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../CardContainer.css"
 function FavCard({favorite, user}){
 
     function handleDelete() {
@@ -8,12 +8,12 @@ function FavCard({favorite, user}){
         });
     }
     return(
-        <li className="card">
-            <img src={favorite.image_url} alt={favorite.name} /> 
+        <div className="card-container">
+            <img  className="img" src={favorite.image_url} alt={favorite.name} /> 
             <h3>{favorite.name}</h3>
             <p>{favorite.description}</p>
-            <button onClick={() => handleDelete()}>Delete</button>
-        </li>
+            <div  className= "button-container" onClick={() => handleDelete()}>Delete</div>
+        </div>
     )
 }
 

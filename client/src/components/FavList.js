@@ -15,7 +15,7 @@ function FavList({favoritesList, user}){
 
 
     return (
-        <ul className="cards">
+        <div id="main-container">
       {favoritesList.length !==0 ? favoritesList.map((favorite) => {
         console.log(favorite)
         return (
@@ -25,8 +25,8 @@ function FavList({favoritesList, user}){
             user={user}
           />
         );
-      }):"favorites not showing :("}
-    </ul>
+      }): "you have no favorites:("}
+    </div>
     )
 }
 
