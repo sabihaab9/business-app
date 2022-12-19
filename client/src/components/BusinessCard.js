@@ -10,6 +10,9 @@ function BusinessCard({business, addToFavorites, user, deleteBusiness}){
         }
         addToFavorites(favoriteItem);
         // console.log(business)
+
+        // e.target.parentElement.remove()
+
     }
 
 

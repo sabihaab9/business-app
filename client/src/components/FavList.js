@@ -3,7 +3,7 @@ import FavCard from "./FavCard"
 //import BusinessCard from "./BusinessCard";
 
 
-function FavList({favoritesList, user}){
+function FavList({favoritesList, user, setFavoritesList}){
 
 // console.log("favorites list in myFavList: ")
 
@@ -23,6 +23,8 @@ function FavList({favoritesList, user}){
             key={favorite.id}
             favorite={favorite}
             user={user}
+            favoritesList={favoritesList}
+            setFavoritesList={setFavoritesList}
           />
         );
       }): "you have no favorites:("}

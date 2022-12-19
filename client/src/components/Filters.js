@@ -15,6 +15,8 @@ import "../App.css"
                 <option value="all">All</option>
                 <option value="home-goods">home goods</option>
                 <option value="restaurant">restaurants</option>
+                <option value="jewelry">jewelry</option>
+                <option value="clothing">clothing</option>
               </select>
             </div>
       

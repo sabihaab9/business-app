@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-
 //import { useHistory } from "react-router-dom";
 //import { useNavigate } from "react-router-dom";
-// import {NavLink} from "react-router-dom";
+//import {NavLink} from "react-router-dom";
 
 function Login({ user, setUser }) {
   const [username, setUsername] = useState("");
@@ -12,7 +11,6 @@ function Login({ user, setUser }) {
 
   // const history = useHistory()
   // console.log(history)
-  // let navigate = useNavigate();
 
   function handleLogin(e) {
     e.preventDefault();
@@ -41,7 +39,11 @@ function Login({ user, setUser }) {
           res.json()
             .then(({ error }) => setError(error));
         }
+        //history.push(`/userprofile`);
+
       });
+
+
   }
 
   const handleChangeUsername = e => setUsername(e.target.value)
@@ -50,7 +52,7 @@ function Login({ user, setUser }) {
   if (user.id) {
     return (
       <div>
-        {user.first_name} is logged in!
+        {user.first_name} is logged in! Go to your profile
       </div>
     )
   }

@@ -2,6 +2,7 @@ App
     --> NavBar
     --> Home 
       --> Search
+      --> BusinessForm
       --> BusinessList
         --> BusinessCard 
 

@@ -1,6 +1,6 @@
 import React from "react"
 
-function BusinessForm({addNewBusiness}) {
+function BusinessForm({addNewBusiness,user}) {
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -17,14 +17,17 @@ function BusinessForm({addNewBusiness}) {
         formElement.reset();
     }
 
+    console.log(user.is_admin)
+
     return(
-        <form onSubmit={handleSubmit}>
+       <> {!user.is_admin ? 
+        (<form onSubmit={handleSubmit}>
             <h1>Add a Business</h1>
             <input type="text" name="name" placeholder="Name" />
             <input type="text" name="address" placeholder="Address" />
             <input type="text" name="phone_number" placeholder="Phone Number"/>
             <button type="submit">Add</button>
-        </form>
+        </form>) : "access denied"}</>
     );
 }
 

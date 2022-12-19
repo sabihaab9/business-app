@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar";
 import UserProfile from './components/UserProfile';
 import SignUp from './components/SignUp';
 import BusinessForm from "./components/BusinessForm";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   const [user, setUser] = useState({});
@@ -102,6 +103,9 @@ function App() {
     <Router>
       <NavBar user={user} setUser={setUser} />
       <Switch>
+        <Route path="/home">
+          <LandingPage/>
+        </Route>
         <Route path="/businesses">
             <ShowBusinesses deleteBusiness={deleteBusiness} addToFavorites={addToFavorites} businessList={businessList} setBusinessList={setBusinessList} user={user} />  
         </Route>
