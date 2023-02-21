@@ -16,7 +16,14 @@ class SessionsController < ApplicationController
   end
 
   def show # /me
+    # def user_favorites
+    #   self.user_businesses
+  #   current_user, methods: [:favorites]
+    #user = User.find_by(id: session[:user_id]), methods: [:businesses_users]
+   # render json: user
+  #end
     if current_user
+      #  user = current_user, methods: [:businesses_users]
       render json: current_user
     else
       render json: { message: "Not logged in" }, status: 401

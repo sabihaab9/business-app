@@ -1,4 +1,5 @@
 import React from "react";
+import "../Search.css"
 
 function Search({ searchTerm, setSearchTerm, showBusinessList}) {
 
@@ -8,10 +9,9 @@ function Search({ searchTerm, setSearchTerm, showBusinessList}) {
     }
 
     return (
-      <div className="ui search">
-        <div className="ui icon input">
-          <input className="prompt" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-          <i className="search icon" />
+      <div id="search-main-container">
+        <div id="input-container">
+          <input id="input" className="prompt" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
         </div>
       </div>
     );

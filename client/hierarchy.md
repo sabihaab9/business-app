@@ -2,17 +2,19 @@ App
     --> NavBar
     --> Home 
       --> Search
-      --> BusinessList 
+      --> BusinessForm
+      --> BusinessList
+        --> BusinessCard 
 
     --> Login
     --> UserProfile
-      --> BusinessList
+      --> MyFavList
+        --> MyFavCard
 
 
 
 TO DO: 
--fix search bar 
--add sign up component
+- fix sign up component
 
 
 

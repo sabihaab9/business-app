@@ -1,4 +1,5 @@
 import React from "react";
+import "../App.css"
 
     function Filters({ onChangeCategory, onFindBusinessClick}) {
         function handleChange(event) {
@@ -9,17 +10,19 @@ import React from "react";
         return (
           <div className="ui form">
             <h3>Filter by Category</h3>
-            <div className="field">
-              <select name="category" id="category" aria-label="category" onChange={handleChange}>
+            <div className="inner-container">
+              <select className="select-container" name="category" id="category" aria-label="category" onChange={handleChange}>
                 <option value="all">All</option>
                 <option value="home-goods">home goods</option>
                 <option value="restaurant">restaurants</option>
+                <option value="jewelry">jewelry</option>
+                <option value="clothing">clothing</option>
               </select>
             </div>
       
             <div className="field">
-              <button onClick={onFindBusinessClick} className="ui secondary button">
-                Find Businesses
+              <button onClick={onFindBusinessClick} id="find-button">
+                <p id="button-text">Find Businesses</p>
               </button>
             </div>
           </div>

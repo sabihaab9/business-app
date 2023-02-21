@@ -11,11 +11,18 @@ class ApplicationController < ActionController::API
     #@current_user = User.find_by_id(session[:user_id]
   end
 
+  def favorites 
+    @current_user.businesses_users
+  end
+
+
+
   private
 
-  def find_business
-    @business = Business.find(params[:id])
-  end
+
+  #@def find_businesses_user
+   # @businesses_user = Businesses_User.find(params[:id])
+  #end
 
   def authorize
     # @current_user = User.find_by_id(session[:user_id])
@@ -29,5 +36,7 @@ class ApplicationController < ActionController::API
   def record_invalid(error)
     render json: { errors: error.record.errors.full_messages }, status: 422
   end
+
+  
 
 end
