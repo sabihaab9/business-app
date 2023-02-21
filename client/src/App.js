@@ -103,8 +103,8 @@ function App() {
     <Router>
       <NavBar user={user} setUser={setUser} />
       <Switch>
-        <Route path="/home">
-          <LandingPage/>
+        <Route exact path="/">
+          <LandingPage />
         </Route>
         <Route path="/businesses">
             <ShowBusinesses deleteBusiness={deleteBusiness} addToFavorites={addToFavorites} businessList={businessList} setBusinessList={setBusinessList} user={user} />  
